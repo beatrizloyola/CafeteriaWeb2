@@ -2,25 +2,25 @@
 
 class Comanda {
     private $id;
-    private $idVenda;
+    private $nome;
     
     function getId() {
         return $this->id;
     }
 
-    function getIdVenda() {
-        return $this->idVenda;
+    function getNome() {
+        return $this->nome;
     }
 
     function setId($id) {
         $this->id = $id;
     }
 
-    function setIdVenda($idVenda) {
-        $this->idVenda = $idVenda;
+    function setNome($nome) {
+        $this->nome = $nome;
     }
 
     function toString(){
-        return $this->id . " - " . $this->idVenda;
+        return $this->id . " - " . $this->nome;
     }
 }
