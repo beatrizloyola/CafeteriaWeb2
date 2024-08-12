@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/CafeteriaWeb2/UsuarioAddEdit.php</file>
+            <file>file:/C:/xampp/htdocs/CafeteriaWeb2/VendaAddEdit.php</file>
+            <file>file:/C:/xampp/htdocs/CafeteriaWeb2/css/sb-admin-2.min.css</file>
+            <file>file:/C:/xampp/htdocs/CafeteriaWeb2/controle/usuarioControl.php</file>
+            <file>file:/C:/xampp/htdocs/CafeteriaWeb2/modelo/vo/Produto.php</file>
+            <file>file:/C:/xampp/htdocs/CafeteriaWeb2/modelo/vo/Venda.php</file>
+            <file>file:/C:/xampp/htdocs/CafeteriaWeb2/modelo/dao/UsuarioDAO.php</file>
+            <file>file:/C:/xampp/htdocs/CafeteriaWeb2/MenuLateral.php</file>
+            <file>file:/C:/xampp/htdocs/CafeteriaWeb2/css/sb-admin-2.css</file>
+            <file>file:/C:/xampp/htdocs/CafeteriaWeb2/VendaList.php</file>
+            <file>file:/C:/xampp/htdocs/CafeteriaWeb2/modelo/dao/VendaDAO.php</file>
+            <file>file:/C:/xampp/htdocs/CafeteriaWeb2/UsuarioList.php</file>
+            <file>file:/C:/xampp/htdocs/CafeteriaWeb2/controle/vendaControl.php</file>
+        </group>
+    </open-files>
+</project-private>
