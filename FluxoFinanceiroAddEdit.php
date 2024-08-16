@@ -100,7 +100,7 @@ if (isset($_GET['id'])){
                                     Id da Venda:
                                     <input type="number" name="idVenda" value="<?php echo $obj==NULL?"":$obj->getIdVenda(); ?>" id="idVenda" class="form-control mb-2"/>
                                 </div>
-                                    
+                                <div>   
                                     <button type="submit" value="Salvar" class="btn btn-success btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-save"></i>
