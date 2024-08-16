@@ -17,7 +17,7 @@ if (! isset ($_SESSION['idUsuarioLogado'])){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Listar Comandas</title>
+    <title>Listar Fluxos Financeiros</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -62,7 +62,7 @@ if (! isset ($_SESSION['idUsuarioLogado'])){
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Listar Comanda</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Listar Usuário</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -70,34 +70,55 @@ if (! isset ($_SESSION['idUsuarioLogado'])){
                                     <thead>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Nome</th>
+                                            <th>Descrição</th>
+                                            <th>Data de Vencimento</th>
+                                            <th>Data de Pagamento</th>
+                                            <th>Valor</th>
+                                            <th>Fluxo</th>
+                                            <th>Situação</th>
+                                            <th>Id do Usuário</th>
+                                            <th>Id da Venda</th>
                                             <th>Ações</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>ID</th>
-                                            <th>Nome</th>
+                                            <th>Descrição</th>
+                                            <th>Data de Vencimento</th>
+                                            <th>Data de Pagamento</th>
+                                            <th>Valor</th>
+                                            <th>Fluxo</th>
+                                            <th>Situação</th>
+                                            <th>Id do Usuário</th>
+                                            <th>Id da Venda</th>
                                             <th>Ações</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         <?php
-                                        require_once $_SERVER['DOCUMENT_ROOT'] . '/CafeteriaWeb2/modelo/dao/ComandaDAO.php';
-                                        $lista = ComandaDAO::getInstance()->listAll();
+                                        require_once $_SERVER['DOCUMENT_ROOT'] . '/CafeteriaWeb2/modelo/dao/FluxoFinanceiroDAO.php';
+                                        $lista = FluxoFinanceiroDAO::getInstance()->listAll();
                                         if (sizeof($lista)>0){
                                             foreach ($lista as $item) {
                                             echo "<tr>
                                                     <td>".$item->getId()."</td>
-                                                    <td>".$item->getNome()."</td>
+                                                    <td>".$item->getDescricao()."</td>
+                                                    <td>".$item->getDataVencimento()."</td>
+                                                    <td>".$item->getDataPagamento()."</td>
+                                                    <td>".$item->getValor()."</td>
+                                                    <td>".$item->getFluxo()."</td>
+                                                    <td>".$item->getSituacao()."</td>
+                                                    <td>".$item->getIdUsuario()."</td>
+                                                    <td>".$item->getIdVenda()."</td>
                                                     <td>
-                                                        <a  href='./ComandaAddEdit.php?id=".$item->getId()."'class='btn btn-warning btn-icon-split'>
+                                                        <a  href='./FluxoFinanceiroAddEdit.php?id=".$item->getId()."'class='btn btn-warning btn-icon-split'>
                                                             <span class='icon text-white-50'>
                                                                 <i class='fas fa-pen'></i>
                                                             </span>
                                                             <span class='text'>Editar</span>
                                                         </a>
-                                                        <a  href='./controle/comandaControl.php?idDel=".$item->getId()."'class='btn btn-danger btn-icon-split'>
+                                                        <a  href='./controle/fluxoFinanceiroControl.php?idDel=".$item->getId()."'class='btn btn-danger btn-icon-split'>
                                                             <span class='icon text-white-50'>
                                                                 <i class='fas fa-trash'></i>
                                                             </span>
@@ -121,9 +142,13 @@ if (! isset ($_SESSION['idUsuarioLogado'])){
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <?php
-                include "./Footer.php";
-            ?> 
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Beatriz Loyola, Emilly Daiane, Lara Kamily & Lília Camilla</span>
+                    </div>
+                </div>
+            </footer>
             <!-- End of Footer -->
 
         </div>

@@ -1,9 +1,8 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'] . '/CafeteriaWeb2/modelo/dao/VendaDAO.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/CafeteriaWeb2/modelo/dao/FluxoFinanceiroDAO.php';
 $obj =  NULL;
 if (isset($_GET['id'])){
-    // Se o ID tá setado, sabe-se que vai ser uma edição
-     $obj = VendaDAO::getInstance()->getById($_GET['id']);
+     $obj = FluxoFinanceiroDAO::getInstance()->getById($_GET['id']);
 }
 ?>
 <!DOCTYPE html>
@@ -17,7 +16,7 @@ if (isset($_GET['id'])){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Gerenciar Vendas</title>
+    <title>Gerenciar Fluxos Financeiros</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -63,29 +62,45 @@ if (isset($_GET['id'])){
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Adicionar Usuário</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Adicionar Fluxo Financeiro</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <form method="POST" action="controle/vendaControl.php">
+                                <form method="POST" action="controle/fluxoFinanceiroControl.php">
                                     <input type="hidden" name="id" value="<?php echo $obj==NULL?"0":$obj->getId(); ?>"/>
                                 <div>
-                                    Data:
-                                    <input type="text" name="data" value="<?php echo $obj==NULL?"":$obj->getData(); ?>" id="data" class="form-control mb-2"/>
+                                    Descrição:
+                                    <input type="text" name="descricao" value="<?php echo $obj==NULL?"":$obj->getDescricao(); ?>" id="descricao" class="form-control mb-2"/>
                                 </div>
                                 <div>
-                                    Hora:
-                                    <input type="text" name="hora" value="<?php echo $obj==NULL?"":$obj->getHora(); ?>" id="hora" class="form-control mb-2"/>
+                                    Data de Vencimento:
+                                    <input type="date" name="dataVencimento" value="<?php echo $obj==NULL?"":$obj->getDataVencimento(); ?>" id="dataVencimento" class="form-control mb-2"/>
+                                </div>
+                                <div>
+                                    Data de Pagamento:
+                                    <input type="date" name="dataPagamento" value="<?php echo $obj==NULL?"":$obj->getDataPagamento(); ?>" id="dataPagamento" class="form-control mb-2"/>
+                                </div>
+                                <div>
+                                    Valor:
+                                    <input type="number" name="valor" value="<?php echo $obj==NULL?"":$obj->getValor(); ?>" id="valor" class="form-control mb-2"/>
+                                </div>
+                                <div>
+                                    Fluxo:
+                                    <input type="text" name="fluxo" value="<?php echo $obj==NULL?"":$obj->getFluxo(); ?>" id="fluxo" class="form-control mb-2"/>
+                                </div>
+                                <div>
+                                    Situação:
+                                    <input type="text" name="situacao" value="<?php echo $obj==NULL?"":$obj->getSituacao(); ?>" id="situacao" class="form-control mb-2"/>
                                 </div>
                                 <div>
                                     Id do Usuário:
-                                    <input type="text" name="idUsuario" value="<?php echo $obj==NULL?"":$obj->getIdUSuario(); ?>" id="idUsuario" class="form-control mb-2"/>
+                                    <input type="number" name="idUsuario" value="<?php echo $obj==NULL?"":$obj->getIdUsuario(); ?>" id="idUsuario" class="form-control mb-2"/>
                                 </div>
                                 <div>
-                                    Comanda:
-                                    <input type="text" name="comanda" value="<?php echo $obj==NULL?"":$obj->getComanda(); ?>" id="comanda" class="form-control mb-2"/>
+                                    Id da Venda:
+                                    <input type="number" name="idVenda" value="<?php echo $obj==NULL?"":$obj->getIdVenda(); ?>" id="idVenda" class="form-control mb-2"/>
                                 </div>
-                                <div>
+                                    
                                     <button type="submit" value="Salvar" class="btn btn-success btn-icon-split">
                                         <span class="icon text-white-50">
                                             <i class="fas fa-save"></i>
